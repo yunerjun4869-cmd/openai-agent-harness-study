@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>模型说完成后，还要检查结果 · OpenAI Agent Harness Study</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f2f5f9; color: #17243a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+main { width: 1100px; max-width: 100%; padding: 35px 42px 30px; margin: auto; }
+.eyebrow { color: #355779; font-size: 14px; font-weight: 650; letter-spacing: 1px; }
+h1 { margin: 11px 0 10px; font-size: 31px; line-height: 1.35; font-weight: 750; }
+.intro { font-size: 16px; line-height: 1.7; margin: 0 0 17px; color: #46576d; }
+.badges { display: flex; gap: 9px; margin-bottom: 19px; }
+.badge { border-radius: 6px; background: #e1edff; color: #245487; padding: 6px 10px; font-size: 13px; }
+.badge.green { background: #deefe7; color: #22674b; }
+.terminal { border-radius: 12px; overflow: hidden; background: #142033; box-shadow: 0 7px 22px #26375216; }
+.terminal-header { padding: 12px 20px; background: #1e2c43; font-size: 13px; color: #c0cee2; }
+.command { padding: 17px 20px 14px; color: #82c9ff; font-size: 15px; border-bottom: 1px solid #ffffff17; }
+pre { margin: 0; padding: 18px 20px 20px; color: #e0e9f5; white-space: pre-wrap;
+  overflow-wrap: anywhere; line-height: 1.65; font-size: 14px; }
+code, pre { font-family: "SFMono-Regular", Menlo, Consolas, "Microsoft YaHei", monospace; }
+.note { background: #fff; border: 1px solid #dfe6ef; border-left: 4px solid #509478;
+  border-radius: 7px; margin-top: 17px; padding: 13px 16px; font-size: 14px; line-height: 1.75; }
+.note strong { color: #21644b; }
+footer { color: #6c7b8f; font-size: 12px; line-height: 1.65; margin-top: 16px; }
+.all pre { font-size: 13px; line-height: 1.5; }
+</style>
+<main class="lesson">
+  <div class="eyebrow">OPENAI AGENT HARNESS STUDY · 运行记录</div>
+  <h1>模型说完成后，还要检查结果</h1>
+  <p class="intro">第 17 课故意先写错答案，宿主检查失败；第二轮修复后，独立验收才通过。</p>
+  <div class="badges">
+    <span class="badge">实际运行记录的排版展示</span>
+    <span class="badge green">模型响应为离线脚本 · 无 API 费用</span>
+  </div>
+  <section class="terminal" aria-label="真实离线运行输出">
+    <div class="terminal-header">本地运行结果 · Python 虚拟环境</div>
+    <div class="command"><code>$ python run.py s17 --demo</code></div>
+    <pre>独立工具验收： {&quot;exit_code&quot;: 1, &quot;checks&quot;: 3, &quot;failures&quot;: [&quot;sum 必须是整数 10&quot;], &quot;target&quot;: &quot;result.json&quot;}
+
+独立工具验收： {&quot;exit_code&quot;: 0, &quot;checks&quot;: 3, &quot;failures&quot;: [], &quot;target&quot;: &quot;result.json&quot;}
+
+目标结果（节选）：
+{
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;rounds&quot;: 2
+}</pre>
+  </section>
+  <div class="note"><strong>第一次 exit_code=1：</strong>sum 不等于 10，验收失败。<br><strong>第二次 exit_code=0：</strong>三项检查通过，最终 completed，合计 2 轮。本页仅展示两条真实验收记录与最终状态，已折叠其他工具输出。</div>
+  <footer>记录生成时间：2026-09-10T01:44:17+08:00<br>
+  这是 HTML 排版页的浏览器截图来源，不是原生终端截图。命令中的 python 指项目虚拟环境里的 Python。</footer>
+</main>
+</html>

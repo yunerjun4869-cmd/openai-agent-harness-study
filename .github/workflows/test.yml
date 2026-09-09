@@ -1,0 +1,29 @@
+name: 离线课程验证
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: 安装学习与测试依赖
+        run: python -m pip install -r requirements-dev.txt
+      - name: 验证协议与本地机制
+        run: python -m pytest -q
+      - name: 跑通全部离线课程
+        run: python run.py all --demo
