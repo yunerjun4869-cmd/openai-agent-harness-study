@@ -47,6 +47,10 @@
 4. Mac：在 Finder 中双击 ZIP 解压。Windows：右键 ZIP，选择 **全部解压缩 / Extract All**。
 5. 打开解压后的文件夹，确认里面能看到 `README.md`、`run.py`、`requirements-dev.txt` 和 `s01_agent_loop`。
 
+下图是本仓库的真实 GitHub 页面：先点绿色 **Code**，再点菜单底部的 **Download ZIP**。不用复制上面的 SSH 地址。
+
+![GitHub 项目的下载位置：Code → Download ZIP](../assets/screenshots/00-download-zip.png)
+
 解压后的文件夹通常叫 `openai-agent-harness-study-main`。如果你重命名了它，也可以正常使用。**后文说的“项目文件夹”，始终指直接包含 `run.py` 的这一层。** Windows 解压时有时会多套一层同名目录，需要继续打开到能看到 `run.py` 为止。
 
 不需要安装 Git，也不需要先下载参考的 Claude 项目。不要直接在 ZIP 预览窗口里运行代码。

@@ -19,6 +19,11 @@
 | s17 模型自报完成 | 第 1 轮验收失败，第 2 轮通过；最终 evidence 保留两次结果 |
 | 从其他工作目录启动 | 在 `/tmp` 调用绝对路径入口正常定位课程 |
 | 未配置 API Key | 明确提示缺少 OPENAI_API_KEY，退出码 1；没有自动转为模拟模式 |
+| GitHub Actions：Ubuntu + Python 3.11 | 安装依赖、66 项测试、17 章离线演示全部通过 |
+| GitHub Actions：Ubuntu + Python 3.13 | 安装依赖、66 项测试、17 章离线演示全部通过 |
+
+首次公开发布的 CI 记录：[运行 34385122748](https://github.com/yunerjun4869-cmd/openai-agent-harness-study/actions/runs/34385122748)。
+Windows 目前提供命令指南，尚未完成同等实机测试；创建符号链接的测试受系统权限影响。
 
 ## 测试分别验证什么
 

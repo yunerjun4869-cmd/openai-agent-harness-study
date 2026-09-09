@@ -4,12 +4,14 @@
 
 [📖 从这里开始：小白安装指南](docs/GETTING_STARTED.md) · [📥 下载 ZIP](https://github.com/yunerjun4869-cmd/openai-agent-harness-study/archive/refs/heads/main.zip) · [🗂 17 章目录](SUMMARY.md)
 
+[![离线课程验证](https://github.com/yunerjun4869-cmd/openai-agent-harness-study/actions/workflows/test.yml/badge.svg)](https://github.com/yunerjun4869-cmd/openai-agent-harness-study/actions/workflows/test.yml)
+
 ## 这到底是什么？
 
 这是一本可以在电脑上“边读、边运行”的 AI Agent 学习手册。
 它用 OpenAI 的工具调用接口，教你做一个能够调用函数、读写文件、安排任务并检查结果的 AI 助手。
 
-**举个例子：**你让 AI 计算 `17 + 25`。它先请求调用 `add` 工具，Python 真正执行加法，把 `42` 交回 AI，最后由 AI 给出回答。后面的课程会把工具换成文件操作、记忆、后台任务和多个助手协作。
+**举个例子**：你让 AI 计算 `17 + 25`。它先请求调用 `add` 工具，Python 真正执行加法，把 `42` 交回 AI，最后由 AI 给出回答。后面的课程会把工具换成文件操作、记忆、后台任务和多个助手协作。
 
 | 你关心的问题 | 直接回答 |
 |---|---|
@@ -41,6 +43,10 @@
 | 5. 跑第一课 | 执行带 `--demo` 的命令 | 看到工具成功、状态 completed、结果 42 |
 
 **不知道“打开终端”“进入文件夹”是什么意思？请直接看 [逐步图文新手指南](docs/GETTING_STARTED.md)，里面把每一次操作拆开说明。**
+
+下载位置如下：先点绿色 **Code**，再点弹出菜单底部的 **Download ZIP**。下图为本仓库的真实 GitHub 页面截图。
+
+![GitHub 下载操作：绿色 Code 按钮，菜单底部 Download ZIP](assets/screenshots/00-download-zip.png)
 
 ### Mac：进入项目文件夹后，逐行复制
 
@@ -148,6 +154,7 @@ Key 获取入口、隐藏文件、`.env.txt` 等问题详见 [新手指南的真
 ## 代码质量与实际范围
 
 本地验证结果：**66 项测试通过，17/17 章离线演示通过**。实际验收环境为 macOS + Python 3.13.5。
+[GitHub Actions](https://github.com/yunerjun4869-cmd/openai-agent-harness-study/actions) 也已在 Ubuntu 的 Python 3.11、3.13 两个环境完成测试和全章节离线演示。
 Windows 提供操作指南，但尚未在 Windows 上完整实测；部分符号链接测试需要系统权限。
 SDK 的请求格式使用真实 OpenAI SDK 与本地 HTTP 模拟测试；尚未使用真实 API Key 或远程 MCP 做联网验收。
 
